@@ -12,7 +12,7 @@
       --surface: #161b22;
       --surface2: #21262d;
       --accent: #58a6ff;
-      --accent2: #3fb950;h
+      --accent2: #3fb950;
       --text: #e6edf3;
       --muted: #8b949e;
       --border: #30363d;
@@ -62,7 +62,7 @@
     .container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
     section { padding: 5rem 0; }
     .section-title {
-      font-size: 1.7rem; font-weight: 800; margin-bottom: 2.5rem;
+      font-size: 1.7rem; font-weight: 800; margin-bottom: 2.5rem; color: var(--text);
       position: relative; display: inline-block;
     }
     .section-title::after {
@@ -77,7 +77,7 @@
       width: 12px; height: 12px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg);
     }
     .timeline-item .date { font-size: .8rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: .35rem; display: block; }
-    .timeline-item h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: .25rem; }
+    .timeline-item h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: .25rem; color: var(--text); }
     .timeline-item .location { font-size: .85rem; color: var(--muted); margin-bottom: .4rem; }
     .timeline-item p { color: var(--muted); font-size: .92rem; }
     .competences-grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 1.2rem; }
@@ -86,7 +86,7 @@
       padding: 1.4rem; transition: border-color .2s;
     }
     .competence-carte:hover { border-color: var(--accent); }
-    .competence-carte h3 { font-size: 1rem; font-weight: 700; margin-bottom: .9rem; }
+    .competence-carte h3 { font-size: 1rem; font-weight: 700; margin-bottom: .9rem; color: var(--text); }
     .tags { display: flex; flex-wrap: wrap; gap: .5rem; }
     .tag { padding: .22rem .7rem; border-radius: 20px; background: rgba(88,166,255,.1); color: var(--accent); font-size: .78rem; font-weight: 600; border: 1px solid rgba(88,166,255,.2); }
     .tag-green { background: rgba(63,185,80,.1); color: var(--accent2); border-color: rgba(63,185,80,.2); }
@@ -96,7 +96,7 @@
       padding: 1.6rem; display: flex; flex-direction: column; gap: .7rem; transition: border-color .2s, transform .2s;
     }
     .project-card:hover { border-color: var(--accent); transform: translateY(-3px); }
-    .project-card h3 { font-size: 1.05rem; font-weight: 700; }
+    .project-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--text); }
     .project-card p { color: var(--muted); font-size: .9rem; flex: 1; }
     .project-tools { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .4rem; }
     .tool-dot { padding: .2rem .65rem; border-radius: 20px; background: var(--surface2); color: var(--muted); font-size: .77rem; border: 1px solid var(--border); }
@@ -104,9 +104,10 @@
       background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem;
     }
     .card-header { display: flex; align-items: center; gap: .8rem; margin-bottom: 1rem; }
-    .card-header h3 { font-size: 1.1rem; font-weight: 700; }
+    .card-header h3 { font-size: 1.1rem; font-weight: 700; color: var(--text); }
     .icon-box { font-size: 1.5rem; }
     .card-large p { color: var(--muted); font-size: .95rem; }
+    .maj { display: inline-block; margin-bottom: 1rem; font-size: .78rem; font-weight: 700; color: var(--accent2); background: rgba(63,185,80,.1); border: 1px solid rgba(63,185,80,.25); padding: .15rem .7rem; border-radius: 20px; }
     .veille-sources { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: 1.2rem; }
     .source-chip { padding: .28rem .85rem; border-radius: 20px; background: var(--surface2); color: var(--muted); font-size: .8rem; border: 1px solid var(--border); }
     .separateur { height: 1px; background: var(--border); margin-bottom: 4rem; }
@@ -115,20 +116,31 @@
     .actu-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem; transition: border-color .2s; }
     .actu-card:hover { border-color: var(--accent); }
     .actu-card .actu-date { font-size: .78rem; color: var(--muted); margin-bottom: .5rem; }
-    .actu-card h4 { font-size: .97rem; font-weight: 700; margin-bottom: .5rem; }
+    .actu-card h4 { font-size: .97rem; font-weight: 700; margin-bottom: .5rem; color: var(--text); }
     .actu-card p { font-size: .87rem; color: var(--muted); }
     .actu-source { display: inline-block; margin-top: .7rem; font-size: .78rem; color: var(--accent); text-decoration: none; }
     .actu-source:hover { text-decoration: underline; }
     .stage-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; margin-bottom: 1.4rem; }
     .stage-header { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem; }
-    .stage-header h3 { font-size: 1.1rem; font-weight: 700; }
+    .stage-header h3 { font-size: 1.1rem; font-weight: 700; color: var(--text); }
     .stage-period { font-size: .8rem; font-weight: 700; color: var(--accent); background: rgba(88,166,255,.1); padding: .2rem .8rem; border-radius: 20px; border: 1px solid rgba(88,166,255,.2); white-space: nowrap; }
     .stage-company { font-size: .88rem; color: var(--muted); margin-bottom: .6rem; }
     .stage-card ul { list-style: none; padding: 0; }
     .stage-card ul li { position: relative; padding-left: 1.2rem; color: var(--muted); font-size: .92rem; margin-bottom: .35rem; }
-    .stage-card ul li::before { content: 'arrow_forward'; font-family: 'Material Icons'; position: absolute; left: 0; color: var(--accent); font-size: .8rem; }
+    .stage-card ul li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: .85rem; }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+    .synth { width: 100%; min-width: 860px; border-collapse: collapse; font-size: .85rem; color: var(--text); }
+    .synth th, .synth td { padding: .7rem .8rem; border-bottom: 1px solid var(--border); text-align: left; vertical-align: middle; }
+    .synth thead th { background: var(--surface2); color: var(--text); font-size: .76rem; font-weight: 700; text-align: center; vertical-align: bottom; }
+    .synth thead th:first-child, .synth thead th:nth-child(2) { text-align: left; }
+    .synth tbody th { font-weight: 600; color: var(--text); }
+    .synth .per { color: var(--muted); white-space: nowrap; }
+    .synth .chk { text-align: center; color: var(--accent2); font-weight: 800; }
+    .synth .grp td { background: rgba(88,166,255,.08); color: var(--accent); font-weight: 700; font-size: .8rem; }
+    .synth .soon { color: var(--muted); text-align: center; font-style: italic; }
+    .synth tr:last-child td { border-bottom: none; }
     #contact { background: var(--surface); border-radius: 20px; margin: 0 0 4rem; padding: 4rem 2.5rem; text-align: center; border: 1px solid var(--border); }
-    #contact h2 { font-size: 2rem; font-weight: 800; margin-bottom: 1rem; }
+    #contact h2 { font-size: 2rem; font-weight: 800; margin-bottom: 1rem; color: var(--text); }
     #contact p { color: var(--muted); max-width: 480px; margin: 0 auto 2rem; }
     .contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
     .contact-link {
@@ -151,10 +163,11 @@
   <div class="logo">Ismael F.</div>
   <ul>
     <li><a href="#parcours">Parcours</a></li>
-    <li><a href="#competences">Competences</a></li>
+    <li><a href="#competences">Compétences</a></li>
     <li><a href="#projets">Projets</a></li>
     <li><a href="#veille">Veille Tech</a></li>
     <li><a href="#stages">Stages</a></li>
+    <li><a href="#synthese">Synthèse E5</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -162,14 +175,14 @@
 <header>
   <div class="hero-content">
     <span class="badge">Ismael FOMBA</span>
-    <h1>Etudiant en <span>BTS SIO</span><br>Option SISR</h1>
-    <p>Passionne par les reseaux, les systemes et la cybersecurite. En formation au Lycee Parc de Vilgenis a Massy.</p>
+    <h1>Étudiant en <span>BTS SIO</span><br>Option SISR</h1>
+    <p>Passionné par les réseaux, les systèmes et la cybersécurité. En formation au Lycée Parc de Vilgenis à Massy.</p>
     <a href="#contact" class="btn-main">Me contacter</a>
     <a href="https://github.com/fombaismael00-bit" class="btn-sec" target="_blank">GitHub</a>
     <div class="hero-tags">
-      <span class="hero-tag">Reseaux</span>
-      <span class="hero-tag">Systemes</span>
-      <span class="hero-tag">Cybersecurite</span>
+      <span class="hero-tag">Réseaux</span>
+      <span class="hero-tag">Systèmes</span>
+      <span class="hero-tag">Cybersécurité</span>
       <span class="hero-tag">Linux</span>
       <span class="hero-tag">Virtualisation</span>
     </div>
@@ -184,23 +197,29 @@
       <div class="timeline-item">
         <span class="date">2025 - 2027</span>
         <h3>BTS SIO - Option SISR</h3>
-        <p class="location">Lycee Parc de Vilgenis, Massy</p>
-        <p>Formation en installation et maintenance de systemes et reseaux, configuration d equipements reseau, securisation des infrastructures et initiation a la cybersecurite.</p>
+        <p class="location">Lycée Parc de Vilgenis, Massy</p>
+        <p>Formation en installation et maintenance de systèmes et réseaux, configuration d'équipements réseau, sécurisation des infrastructures et initiation à la cybersécurité.</p>
+      </div>
+      <div class="timeline-item">
+        <span class="date">Juin - Juillet 2026</span>
+        <h3>Stage chez CEFFAGE</h3>
+        <p class="location">Infogérance informatique, Paris 8e</p>
+        <p>Déploiement de postes, support utilisateur et gestion de tickets GLPI.</p>
       </div>
       <div class="timeline-item">
         <span class="date">2022 - 2025</span>
-        <h3>Baccalaureat General</h3>
-        <p class="location">Lycee Jacques Feyder, Epinay-sur-Seine</p>
-        <p>Options : Mathematiques et Sciences Economiques et Sociales. Diplome obtenu en 2025.</p>
+        <h3>Baccalauréat Général</h3>
+        <p class="location">Lycée Jacques Feyder, Épinay-sur-Seine</p>
+        <p>Options : Mathématiques et Sciences Économiques et Sociales. Diplôme obtenu en 2025.</p>
       </div>
     </div>
   </section>
 
   <section id="competences">
-    <h2 class="section-title">Competences</h2>
+    <h2 class="section-title">Compétences</h2>
     <div class="competences-grille">
       <div class="competence-carte">
-        <h3>Reseaux</h3>
+        <h3>Réseaux</h3>
         <div class="tags">
           <span class="tag">VLAN</span>
           <span class="tag">Routage</span>
@@ -210,7 +229,7 @@
         </div>
       </div>
       <div class="competence-carte">
-        <h3>Systemes</h3>
+        <h3>Systèmes</h3>
         <div class="tags">
           <span class="tag">Linux / Debian</span>
           <span class="tag">Windows Server</span>
@@ -219,7 +238,7 @@
         </div>
       </div>
       <div class="competence-carte">
-        <h3>Securite</h3>
+        <h3>Sécurité</h3>
         <div class="tags">
           <span class="tag">VPN</span>
           <span class="tag">Pare-feu</span>
@@ -235,10 +254,12 @@
           <span class="tag">GNS3</span>
           <span class="tag">Docker</span>
           <span class="tag">Git / GitHub</span>
+          <span class="tag">GLPI</span>
+          <span class="tag">AnyDesk</span>
         </div>
       </div>
       <div class="competence-carte">
-        <h3>Developpement</h3>
+        <h3>Développement</h3>
         <div class="tags">
           <span class="tag tag-green">HTML / CSS</span>
           <span class="tag tag-green">Bash</span>
@@ -248,7 +269,7 @@
       <div class="competence-carte">
         <h3>Langues</h3>
         <div class="tags">
-          <span class="tag">Francais - Natif</span>
+          <span class="tag">Français - Natif</span>
           <span class="tag">Anglais - Technique</span>
         </div>
       </div>
@@ -259,8 +280,8 @@
     <h2 class="section-title">Projets</h2>
     <div class="project-list">
       <div class="project-card">
-        <h3>Extension d une architecture reseau</h3>
-        <p>Creation d un sous-reseau securise conforme au systeme d information existant : adressage, segmentation VLAN, routage inter-VLAN et documentation complete.</p>
+        <h3>Extension d'une architecture réseau</h3>
+        <p>Création d'un sous-réseau sécurisé conforme au système d'information existant : adressage, segmentation VLAN, routage inter-VLAN et documentation complète.</p>
         <div class="project-tools">
           <span class="tool-dot">Routage</span>
           <span class="tool-dot">VLAN</span>
@@ -270,8 +291,8 @@
         </div>
       </div>
       <div class="project-card">
-        <h3>TP Louvre - Infrastructure complete</h3>
-        <p>Conception, implementation et documentation d une infrastructure reseau complete et securisee repondant a un cahier des charges : annuaire, partage de fichiers, politique de securite.</p>
+        <h3>TP Louvre - Infrastructure complète</h3>
+        <p>Conception, implémentation et documentation d'une infrastructure réseau complète et sécurisée répondant à un cahier des charges : annuaire, partage de fichiers, politique de sécurité.</p>
         <div class="project-tools">
           <span class="tool-dot">Gestion de projet</span>
           <span class="tool-dot">Debian</span>
@@ -281,7 +302,7 @@
       </div>
       <div class="project-card">
         <h3>Portfolio Personnel</h3>
-        <p>Conception et developpement de ce portfolio en HTML/CSS pur, heberge sur GitHub Pages, pour presenter mon parcours et mes competences.</p>
+        <p>Conception et développement de ce portfolio en HTML/CSS pur, hébergé sur GitHub Pages, pour présenter mon parcours et mes compétences.</p>
         <div class="project-tools">
           <span class="tool-dot">HTML</span>
           <span class="tool-dot">CSS</span>
@@ -294,20 +315,23 @@
   <section id="veille">
     <h2 class="section-title">Veille Technologique</h2>
     <div class="card-large">
+      <span class="maj">Mis à jour : octobre 2026</span>
       <div class="card-header">
         <span class="icon-box">&#x1F4E1;</span>
-        <h3>Securite des objets connectes (IoT)</h3>
+        <h3>Sécurité des objets connectés (IoT)</h3>
       </div>
       <p>
-        L explosion des objets connectes (IoT) en entreprise apporte une flexibilite majeure, mais transforme ces equipements en cibles privilegiees pour les cyberattaques en raison de leurs failles de securite natives. Face au risque de compromission du systeme d information, la securisation et le cloisonnement de ces terminaux au sein de l infrastructure reseau sont devenus des enjeux critiques.
+        L'explosion des objets connectés (IoT) en entreprise apporte une flexibilité majeure, mais transforme ces équipements en cibles privilégiées pour les cyberattaques en raison de leurs failles de sécurité natives. En 2026, les botnets IoT restent très actifs et l'Union européenne durcit le cadre légal avec le Cyber Resilience Act : la sécurisation et le cloisonnement de ces terminaux au sein de l'infrastructure réseau sont plus que jamais des enjeux critiques.
       </p>
       <p style="margin-top:.9rem; color: #8b949e; font-size:.9rem;">
-        Thematiques suivies : segmentation reseau pour IoT, authentification des equipements, mise a jour des firmwares, detection d anomalies comportementales.
+        Thématiques suivies : segmentation réseau pour IoT, authentification des équipements (fin des mots de passe par défaut), mise à jour des firmwares, détection d'anomalies comportementales, conformité réglementaire (Cyber Resilience Act, NIS 2).
       </p>
       <div class="veille-sources">
         <span class="source-chip">ANSSI</span>
-        <span class="source-chip">CISA</span>
         <span class="source-chip">CERT-FR</span>
+        <span class="source-chip">CISA</span>
+        <span class="source-chip">ENISA</span>
+        <span class="source-chip">Nozomi Networks</span>
         <span class="source-chip">Le Monde Informatique</span>
         <span class="source-chip">SecurityWeek</span>
       </div>
@@ -316,47 +340,130 @@
 
   <section id="actualites">
     <div class="separateur"></div>
-    <h2 class="section-title">Actualites Recentes</h2>
+    <h2 class="section-title">Actualités Récentes</h2>
     <p class="sous-titre">Articles et rapports suivis dans le cadre de ma veille technologique</p>
     <div class="actu-grid">
       <div class="actu-card">
-        <div class="actu-date">2025</div>
-        <h4>Vulnerabilites critiques dans les routeurs industriels</h4>
-        <p>Des failles zero-day decouvertes sur des equipements IoT industriels permettent une prise de controle a distance sans authentification.</p>
-        <a class="actu-source" href="https://www.cert.ssi.gouv.fr/" target="_blank">CERT-FR</a>
+        <div class="actu-date">Octobre 2026</div>
+        <h4>Tengu : une variante modernisée de Mirai</h4>
+        <p>Nozomi Networks analyse Tengu, un botnet dérivé de Mirai qui cible les équipements IoT exposés sur Internet et cherche à rester le plus longtemps possible sur les appareils infectés.</p>
+        <a class="actu-source" href="https://securityonline.info/tag/nozomi-networks/" target="_blank">Nozomi Networks / SecurityOnline</a>
       </div>
       <div class="actu-card">
-        <div class="actu-date">2025</div>
-        <h4>Recommandations ANSSI pour la securisation des objets connectes</h4>
-        <p>L ANSSI publie un guide pratique pour integrer les equipements IoT dans les reseaux d entreprise en minimisant les risques.</p>
-        <a class="actu-source" href="https://www.ssi.gouv.fr/" target="_blank">ANSSI</a>
+        <div class="actu-date">Septembre 2026</div>
+        <h4>Cyber Resilience Act : début des obligations de signalement</h4>
+        <p>Depuis le 11 septembre 2026, les fabricants de produits connectés doivent signaler les vulnérabilités activement exploitées et les incidents graves : alerte sous 24 h, rapport complémentaire sous 72 h. La plupart des autres exigences s'appliqueront fin 2027.</p>
+        <a class="actu-source" href="https://www.globalsources.com/knowledge/eu-cyber-resilience-act-connected-device-compliance-hkshows/" target="_blank">Global Sources</a>
       </div>
       <div class="actu-card">
-        <div class="actu-date">2024 - 2025</div>
-        <h4>Botnet Mirai : nouvelles variantes ciblant les NAS</h4>
-        <p>Les heritiers du botnet Mirai continuent d evoluer en exploitant les equipements de stockage reseau mal configures.</p>
-        <a class="actu-source" href="https://www.securityweek.com/" target="_blank">SecurityWeek</a>
+        <div class="actu-date">Juillet 2026</div>
+        <h4>Botnet Dysphoria : environ 200 000 appareils compromis</h4>
+        <p>Ce botnet exploite des identifiants Telnet et SSH faibles ainsi que des failles IoT connues. Les réseaux de santé sont particulièrement exposés via les équipements embarqués non mis à jour.</p>
+        <a class="actu-source" href="https://aviatrix.ai/threat-research-center/july-2026-cve-landscape" target="_blank">Recorded Future / Aviatrix</a>
+      </div>
+      <div class="actu-card">
+        <div class="actu-date">Octobre 2025 - 2026</div>
+        <h4>Aisuru : record d'attaque DDoS contre Microsoft Azure</h4>
+        <p>Le botnet Aisuru, qui détourne routeurs domestiques et caméras de surveillance, a été lié à une attaque DDoS record de 15,72 Tbps contre Azure. Les attaques de ce type se sont poursuivies en 2026.</p>
+        <a class="actu-source" href="https://itpro.com/security/cyber-attacks/iot-attacks-the-biggest-attacks-so-far-and-what-businesses-can-do" target="_blank">ITPro</a>
       </div>
     </div>
   </section>
 
   <section id="stages">
-    <h2 class="section-title">Stages et Experiences</h2>
+    <h2 class="section-title">Stages et Expériences</h2>
     <div class="stage-card">
       <div class="stage-header">
         <div>
-          <h3>Stage BTS SIO - SISR</h3>
-          <p class="stage-company">A venir - 2026</p>
+          <h3>Stage BTS SIO SISR - Technicien infogérance</h3>
+          <p class="stage-company">CEFFAGE - Start-up d'infogérance informatique, Paris 8e</p>
         </div>
-        <span class="stage-period">2026</span>
+        <span class="stage-period">1er juin - 3 juillet 2026</span>
       </div>
-      <p style="color: #8b949e; font-size: .92rem;">Stage prevu dans le cadre de la premiere annee de BTS SIO. Objectif : mettre en pratique les competences acquises en administration reseau et systemes en environnement professionnel.</p>
+      <p style="color: #8b949e; font-size: .92rem; margin-bottom: 1rem;">CEFFAGE assure la maintenance, le déploiement et le support technique du parc informatique de ses clients (commerces, professions libérales, établissements hôteliers et médicaux), à distance comme sur site. J'ai rejoint le pôle informatique, sous la responsabilité de M. Guilain Richard, Directeur Général et maître de stage.</p>
+      <h4 style="font-size: .95rem; margin-bottom: .6rem; color: var(--text);">Missions réalisées</h4>
+      <ul>
+        <li>Prise en main du poste de travail et découverte des outils internes (GLPI, RMM, Teams)</li>
+        <li>Installation et configuration de Windows 10 sur des postes portables</li>
+        <li>Installation de logiciels standards (navigateurs, Office 365, antivirus) sur des postes clients</li>
+        <li>Dépannage d'une imprimante chez un client</li>
+        <li>Création et suivi de tickets d'incidents sur GLPI</li>
+        <li>Installation de 4 PC portables et de leurs licences chez un client</li>
+      </ul>
+    </div>
+
+    <div class="stage-card">
+      <div class="stage-header">
+        <div>
+          <h3>Mission détaillée : déploiement de 4 PC portables</h3>
+          <p class="stage-company">Intervention sur site chez un client - 1 journée</p>
+        </div>
+      </div>
+      <ul>
+        <li><strong style="color: var(--text);">Contexte :</strong> le client devait équiper plusieurs collaborateurs de nouveaux postes de travail. La préparation m'a été confiée en autonomie, en suivant la procédure habituelle de l'entreprise.</li>
+        <li><strong style="color: var(--text);">Objectif :</strong> préparer 4 PC portables neufs avant leur mise en service.</li>
+        <li><strong style="color: var(--text);">Réalisation :</strong> démarrage et configuration initiale de Windows 10, installation de la bureautique (Office 365) et de l'antivirus, activation des licences.</li>
+        <li><strong style="color: var(--text);">Résultat :</strong> les 4 postes ont été remis au client, prêts à l'emploi pour les utilisateurs.</li>
+      </ul>
+    </div>
+
+    <div class="stage-card">
+      <h4 style="font-size: .95rem; margin-bottom: .8rem; color: var(--text);">Environnement technique et outils</h4>
+      <div class="tags" style="margin-bottom: 1.4rem;">
+        <span class="tag">GLPI</span>
+        <span class="tag">RMM</span>
+        <span class="tag">AnyDesk</span>
+        <span class="tag">Active Directory</span>
+        <span class="tag">VPN SSL Sophos</span>
+        <span class="tag">Pare-feu Watchguard</span>
+        <span class="tag">Bitdefender</span>
+        <span class="tag">Microsoft 365 / Teams</span>
+        <span class="tag">Windows 10 / Server 2012 R2</span>
+        <span class="tag">macOS</span>
+      </div>
+      <h4 style="font-size: .95rem; margin-bottom: .8rem; color: var(--text);">Compétences développées</h4>
+      <ul>
+        <li>Déploiement et configuration de postes de travail sous Windows</li>
+        <li>Gestion des tickets d'incidents et prise en main à distance (GLPI, RMM, AnyDesk)</li>
+        <li>Administration de comptes sur Active Directory</li>
+        <li>Première approche du diagnostic réseau (switchs, adresses IP, Wi-Fi) et de la sécurité (VPN, antivirus)</li>
+        <li>Autonomie, sens du contact client et rigueur dans la documentation des interventions</li>
+      </ul>
+    </div>
+
+    <div class="stage-card">
+      <h4 style="font-size: .95rem; margin-bottom: .6rem; color: var(--text);">Bilan</h4>
+      <p style="color: #8b949e; font-size: .92rem;">Ce stage m'a fait découvrir concrètement le métier de technicien en infogérance, bien au-delà de la théorie vue en cours. Les principales difficultés (gestion du temps lors des interventions multi-clients, prise en main de l'outil RMM) ont été surmontées grâce à l'accompagnement de l'équipe, et ont renforcé ma confiance. Cette expérience conforte mon choix de poursuivre dans les systèmes et réseaux.</p>
+    </div>
+  </section>
+
+  <section id="synthese">
+    <h2 class="section-title">Tableau de synthèse - Épreuve E5</h2>
+    <p class="sous-titre">BTS SIO option SISR - Session 2026 : réalisations professionnelles et compétences mises en œuvre</p>
+    <div class="table-wrap">
+      <table class="synth">
+        <thead><tr><th scope="col">Réalisation</th><th scope="col">Période</th><th scope="col">Gérer le patrimoine informatique</th><th scope="col">Répondre aux incidents et aux demandes</th><th scope="col">Développer la présence en ligne</th><th scope="col">Travailler en mode projet</th><th scope="col">Mettre à disposition un service informatique</th><th scope="col">Organiser son développement professionnel</th></tr></thead>
+        <tbody>
+<tr class="grp"><td colspan="8">Réalisations en cours de formation</td></tr>
+<tr><th scope="row">AP Louvre : Filtrage, DMZ, Serveur Web</th><td class="per">25/02/26 au 11/03/26</td><td class="chk">✓</td><td class="chk">✓</td><td class="chk"></td><td class="chk">✓</td><td class="chk">✓</td><td class="chk"></td></tr>
+<tr><th scope="row">AP Louvre : Service interne (AD, DHCP...)</th><td class="per">18/03/26 au 01/04/26</td><td class="chk">✓</td><td class="chk">✓</td><td class="chk"></td><td class="chk">✓</td><td class="chk">✓</td><td class="chk"></td></tr>
+<tr><th scope="row">Projet extension d'une architecture</th><td class="per">16/04/26 au 07/05/26</td><td class="chk">✓</td><td class="chk"></td><td class="chk"></td><td class="chk"></td><td class="chk">✓</td><td class="chk"></td></tr>
+<tr><th scope="row">TP Déployer un serveur Debian</th><td class="per">12/02/26</td><td class="chk">✓</td><td class="chk"></td><td class="chk"></td><td class="chk"></td><td class="chk">✓</td><td class="chk"></td></tr>
+<tr class="grp"><td colspan="8">Réalisations en milieu professionnel - 1re année (stage CEFFAGE)</td></tr>
+<tr><th scope="row">Installation de PC portables</th><td class="per">01/06/26 au 05/06/26</td><td class="chk">✓</td><td class="chk"></td><td class="chk"></td><td class="chk"></td><td class="chk"></td><td class="chk"></td></tr>
+<tr><th scope="row">Installation et configuration de postes clients</th><td class="per">09/06/26 au 10/06/26</td><td class="chk"></td><td class="chk">✓</td><td class="chk"></td><td class="chk"></td><td class="chk"></td><td class="chk"></td></tr>
+<tr><th scope="row">Dépannage d'une imprimante client</th><td class="per">16/06/26 au 17/06/26</td><td class="chk"></td><td class="chk">✓</td><td class="chk"></td><td class="chk"></td><td class="chk"></td><td class="chk"></td></tr>
+<tr><th scope="row">Création de tickets d'incidents sur GLPI</th><td class="per">23/06/26 au 24/06/26</td><td class="chk"></td><td class="chk">✓</td><td class="chk"></td><td class="chk"></td><td class="chk"></td><td class="chk"></td></tr>
+<tr class="grp"><td colspan="8">Réalisations en milieu professionnel - 2e année</td></tr>
+<tr><td colspan="8" class="soon">À venir</td></tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
   <section id="contact">
     <h2>Travaillons ensemble !</h2>
-    <p>Disponible pour un stage, un projet ou toute opportunite dans les reseaux et la cybersecurite.</p>
+    <p>Disponible pour un stage, un projet ou toute opportunité dans les réseaux et la cybersécurité.</p>
     <div class="contact-links">
       <a class="contact-link" href="https://github.com/fombaismael00-bit" target="_blank">
         <svg viewBox="0 0 24 24"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.31 3.435 9.818 8.205 11.404.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.312 24 17.807 24 12.5 24 5.87 18.627.5 12 .5z"/></svg>
@@ -376,7 +483,7 @@
 </main>
 
 <footer>
-  <p>2025 Ismael FOMBA - BTS SIO SISR - Lycee Parc de Vilgenis, Massy</p>
+  <p>2026 Ismael FOMBA - BTS SIO SISR - Lycée Parc de Vilgenis, Massy</p>
 </footer>
 
 </body>
