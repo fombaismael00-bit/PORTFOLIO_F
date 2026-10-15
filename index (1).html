@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ismael Fomba – Portfolio BTS SIO SISR</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f4f1ea;
+    --paper-2: #ebe7dd;
+    --ink: #1f1d1a;
+    --soft: #55504a;
+    --rule: #cfc9bc;
+    --accent: #a8401f;
+    --serif: 'Newsreader', Georgia, serif;
+    --sans: 'IBM Plex Sans', system-ui, sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: var(--sans); font-size: 16px; line-height: 1.65;
+  }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:hover { color: var(--ink); }
+
+  .layout { display: grid; grid-template-columns: 280px 1fr; min-height: 100vh; }
+
+  /* colonne gauche */
+  aside {
+    position: sticky; top: 0; height: 100vh;
+    padding: 2.5rem 2rem; border-right: 1px solid var(--rule);
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .id h1 { font-family: var(--serif); font-weight: 600; font-size: 1.9rem; line-height: 1.1; }
+  .id p { font-family: var(--mono); font-size: .78rem; color: var(--soft); margin-top: .7rem; line-height: 1.5; }
+  nav[role="tablist"] { margin-top: 2.5rem; display: flex; flex-direction: column; }
+  nav button {
+    all: unset; cursor: pointer; box-sizing: border-box;
+    font-family: var(--sans); font-size: .95rem; color: var(--soft);
+    padding: .45rem 0 .45rem .9rem; border-left: 2px solid transparent;
+  }
+  nav button:hover { color: var(--ink); }
+  nav button[aria-selected="true"] { color: var(--ink); font-weight: 600; border-left-color: var(--accent); }
+  nav button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .side-foot { font-family: var(--mono); font-size: .72rem; color: var(--soft); }
+
+  /* contenu */
+  main { padding: 3.5rem 3rem 5rem; max-width: 980px; }
+  .panel[hidden] { display: none; }
+  .panel > h2 { font-family: var(--serif); font-weight: 600; font-size: 2.2rem; line-height: 1.15; margin-bottom: 2rem; }
+  h3 { font-family: var(--serif); font-weight: 600; font-size: 1.25rem; line-height: 1.3; }
+  .panel p + p { margin-top: .9rem; }
+  .lead { font-family: var(--serif); font-size: 1.45rem; line-height: 1.45; }
+  .meta { font-family: var(--mono); font-size: .78rem; color: var(--soft); }
+  .note { font-size: .88rem; color: var(--soft); }
+
+  .entry { padding: 1.4rem 0; border-top: 1px solid var(--rule); }
+  .entry:last-child { border-bottom: 1px solid var(--rule); }
+  .entry .meta { margin-bottom: .3rem; }
+  .entry p { color: var(--soft); margin-top: .4rem; }
+
+  dl.skills { border-top: 1px solid var(--rule); }
+  dl.skills > div { display: grid; grid-template-columns: 170px 1fr; gap: 1rem; padding: .9rem 0; border-bottom: 1px solid var(--rule); }
+  dl.skills dt { font-family: var(--mono); font-size: .8rem; color: var(--soft); padding-top: .15rem; }
+
+  ul.plain { list-style: none; }
+  ul.plain li { padding-left: 1.1rem; position: relative; margin-top: .4rem; }
+  ul.plain li::before { content: '–'; position: absolute; left: 0; color: var(--accent); }
+
+  .sub { font-family: var(--mono); font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; color: var(--soft); margin: 2.2rem 0 .6rem; }
+
+  /* tableau E5 */
+  .table-wrap { overflow-x: auto; margin-top: 1rem; }
+  table.e5 { border-collapse: collapse; width: 100%; min-width: 720px; font-size: .84rem; }
+  .e5 th, .e5 td { border-bottom: 1px solid var(--rule); padding: .6rem .5rem; text-align: left; vertical-align: top; }
+  .e5 thead th { font-weight: 600; font-size: .74rem; line-height: 1.3; vertical-align: bottom; border-bottom: 2px solid var(--ink); }
+  .e5 tbody th { font-weight: 500; }
+  .e5 .per { font-family: var(--mono); font-size: .76rem; color: var(--soft); white-space: nowrap; }
+  .e5 .c { text-align: center; width: 60px; color: var(--accent); font-weight: 600; }
+  .e5 thead th.c { color: var(--ink); font-weight: 600; padding-left: .2rem; padding-right: .2rem; }
+  .e5 .grp td { font-family: var(--mono); font-size: .74rem; text-transform: uppercase; letter-spacing: .05em; color: var(--soft); background: var(--paper-2); }
+
+  .contact-list { list-style: none; border-top: 1px solid var(--rule); }
+  .contact-list li { display: grid; grid-template-columns: 120px 1fr; padding: .9rem 0; border-bottom: 1px solid var(--rule); }
+  .contact-list span { font-family: var(--mono); font-size: .8rem; color: var(--soft); }
+
+  @media (max-width: 860px) {
+    .layout { display: block; }
+    aside { position: static; height: auto; padding: 1.5rem 1.2rem 0; border-right: 0; border-bottom: 1px solid var(--rule); }
+    .side-foot { display: none; }
+    nav[role="tablist"] { flex-direction: row; overflow-x: auto; margin-top: 1.2rem; gap: 1.2rem; scrollbar-width: none; }
+    nav button { padding: .6rem 0; border-left: 0; border-bottom: 2px solid transparent; white-space: nowrap; }
+    nav button[aria-selected="true"] { border-bottom-color: var(--accent); }
+    main { padding: 2rem 1.2rem 4rem; }
+    .panel > h2 { font-size: 1.8rem; }
+    .lead { font-size: 1.25rem; }
+    dl.skills > div { grid-template-columns: 1fr; gap: .2rem; }
+    .contact-list li { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+
+  <aside>
+    <div>
+      <div class="id">
+        <h1>Ismael<br>Fomba</h1>
+        <p>BTS SIO option SISR<br>Lycée Parc de Vilgenis, Massy</p>
+      </div>
+      <nav role="tablist" aria-label="Sections du portfolio">
+        <button role="tab" id="t-accueil" aria-controls="accueil" data-tab="accueil">Accueil</button>
+        <button role="tab" id="t-parcours" aria-controls="parcours" data-tab="parcours">Parcours</button>
+        <button role="tab" id="t-competences" aria-controls="competences" data-tab="competences">Compétences</button>
+        <button role="tab" id="t-projets" aria-controls="projets" data-tab="projets">Projets</button>
+        <button role="tab" id="t-stage" aria-controls="stage" data-tab="stage">Stage</button>
+        <button role="tab" id="t-veille" aria-controls="veille" data-tab="veille">Veille</button>
+        <button role="tab" id="t-e5" aria-controls="e5" data-tab="e5">Tableau E5</button>
+        <button role="tab" id="t-contact" aria-controls="contact" data-tab="contact">Contact</button>
+      </nav>
+    </div>
+    <div class="side-foot">Session 2026</div>
+  </aside>
+
+  <main>
+
+    <!-- ACCUEIL -->
+    <section class="panel" id="accueil" role="tabpanel" aria-labelledby="t-accueil" hidden>
+      <h2>Bonjour, je suis Ismael.</h2>
+      <p class="lead">Étudiant en première année de BTS SIO, option SISR (systèmes et réseaux). J'ai fait mon premier stage en infogérance cet été, et ce portfolio rassemble ce que j'ai fait en cours et en entreprise.</p>
+      <p style="margin-top:1.4rem">Je m'intéresse surtout aux réseaux, à l'administration de serveurs Linux et Windows, et à la sécurité. Vous trouverez ici mes projets, mon rapport de stage résumé, ma veille technologique et le tableau de synthèse demandé pour l'épreuve E5.</p>
+      <p class="note" style="margin-top:1.4rem">Je cherche un stage et une alternance dans le domaine des systèmes et réseaux.</p>
+    </section>
+
+    <!-- PARCOURS -->
+    <section class="panel" id="parcours" role="tabpanel" aria-labelledby="t-parcours" hidden>
+      <h2>Parcours</h2>
+      <div class="entry">
+        <div class="meta">Juin – juillet 2026</div>
+        <h3>Stage chez CEFFAGE</h3>
+        <p>Entreprise d'infogérance informatique à Paris (8e). Installation de postes, dépannage et tickets GLPI.</p>
+      </div>
+      <div class="entry">
+        <div class="meta">2025 – 2027</div>
+        <h3>BTS SIO, option SISR</h3>
+        <p>Lycée Parc de Vilgenis, Massy. Installation et maintenance de systèmes et de réseaux, configuration d'équipements, sécurisation des infrastructures.</p>
+      </div>
+      <div class="entry">
+        <div class="meta">2022 – 2025</div>
+        <h3>Baccalauréat général</h3>
+        <p>Lycée Jacques Feyder, Épinay-sur-Seine. Spécialités mathématiques et sciences économiques et sociales. Obtenu en 2025.</p>
+      </div>
+    </section>
+
+    <!-- COMPETENCES -->
+    <section class="panel" id="competences" role="tabpanel" aria-labelledby="t-competences" hidden>
+      <h2>Compétences</h2>
+      <dl class="skills">
+        <div><dt>Réseaux</dt><dd>VLAN, routage, Cisco, TCP/IP, DHCP et DNS</dd></div>
+        <div><dt>Systèmes</dt><dd>Linux (Debian), Windows Server, Active Directory, Samba</dd></div>
+        <div><dt>Sécurité</dt><dd>VPN, pare-feu, SSH, ACL, sécurité des objets connectés</dd></div>
+        <div><dt>Outils</dt><dd>VirtualBox, GNS3, Docker, Git et GitHub, GLPI, AnyDesk</dd></div>
+        <div><dt>Développement</dt><dd>HTML/CSS, Bash, bases de Python</dd></div>
+        <div><dt>Langues</dt><dd>Français (langue maternelle), anglais technique</dd></div>
+      </dl>
+    </section>
+
+    <!-- PROJETS -->
+    <section class="panel" id="projets" role="tabpanel" aria-labelledby="t-projets" hidden>
+      <h2>Projets</h2>
+      <div class="entry">
+        <div class="meta">25/02/26 – 11/03/26</div>
+        <h3>AP Louvre : filtrage, DMZ et serveur web</h3>
+        <p>Première partie de l'infrastructure du projet Louvre : filtrage du trafic, mise en place d'une DMZ et d'un serveur web.</p>
+      </div>
+      <div class="entry">
+        <div class="meta">18/03/26 – 01/04/26</div>
+        <h3>AP Louvre : services internes</h3>
+        <p>Seconde partie : services du réseau interne, avec Active Directory et DHCP, pour répondre au cahier des charges.</p>
+      </div>
+      <div class="entry">
+        <div class="meta">16/04/26 – 07/05/26</div>
+        <h3>Extension d'une architecture réseau</h3>
+        <p>Création d'un sous-réseau sécurisé qui s'intègre au système d'information existant : adressage, VLAN, routage entre VLAN, documentation. Réalisé avec VirtualBox et GNS3.</p>
+      </div>
+      <div class="entry">
+        <div class="meta">12/02/26</div>
+        <h3>TP : déployer un serveur Debian</h3>
+        <p>Installation et mise en service d'un serveur Debian.</p>
+      </div>
+      <div class="entry">
+        <div class="meta">2026</div>
+        <h3>Ce portfolio</h3>
+        <p>Une seule page en HTML et CSS, hébergée sur GitHub Pages.</p>
+      </div>
+    </section>
+
+    <!-- STAGE -->
+    <section class="panel" id="stage" role="tabpanel" aria-labelledby="t-stage" hidden>
+      <h2>Stage chez CEFFAGE</h2>
+      <p class="meta">Du 1er juin au 3 juillet 2026 · Paris 8e · Maître de stage : M. Guilain Richard, directeur général</p>
+
+      <p style="margin-top:1.4rem">CEFFAGE est une start-up d'infogérance : elle gère à distance ou sur site le parc informatique de ses clients (commerces, professions libérales, hôtels, structures médicales). J'étais dans le pôle informatique, avec un technicien pour m'encadrer sur chaque mission.</p>
+
+      <div class="sub">Ce que j'ai fait</div>
+      <ul class="plain">
+        <li>Découverte des outils internes : GLPI, RMM, Teams</li>
+        <li>Installation et configuration de Windows 10 sur des portables</li>
+        <li>Installation de logiciels standards (navigateurs, Office 365, antivirus) chez des clients</li>
+        <li>Dépannage d'une imprimante chez un client</li>
+        <li>Création et suivi de tickets d'incident sur GLPI</li>
+        <li>Installation de 4 PC portables et de leurs licences chez un client</li>
+      </ul>
+
+      <div class="sub">La mission que j'ai le mieux documentée : 4 PC portables</div>
+      <p>Un client devait équiper plusieurs collaborateurs avec des postes neufs. On m'a confié la préparation, en autonomie, en suivant la procédure de l'entreprise. J'ai démarré les quatre portables, fait la configuration initiale de Windows 10, installé Office 365 et l'antivirus, puis activé les licences. Les postes ont été remis au client prêts à l'emploi.</p>
+
+      <div class="sub">Outils rencontrés</div>
+      <p>GLPI pour les tickets et le parc, un outil RMM pour la supervision à distance, AnyDesk pour la prise en main, Active Directory, VPN SSL Sophos, pare-feu Watchguard, Bitdefender, Microsoft 365 et Teams. Côté systèmes : Windows 10, Windows Server 2012 R2 et macOS.</p>
+
+      <div class="sub">Ce que j'en retiens</div>
+      <p>J'ai appris à travailler en autonomie tout en rendant compte, à parler aux clients sur site, et à bien documenter mes interventions, parce que plusieurs techniciens peuvent passer sur le même client. Au début, j'ai eu du mal avec la gestion du temps quand on enchaîne plusieurs clients, et avec l'outil RMM. L'équipe m'a aidé et ça va beaucoup mieux. Ce stage m'a conforté dans l'idée de continuer en systèmes et réseaux.</p>
+    </section>
+
+    <!-- VEILLE -->
+    <section class="panel" id="veille" role="tabpanel" aria-labelledby="t-veille" hidden>
+      <h2>Veille technologique</h2>
+      <p class="meta">Sécurité des objets connectés (IoT) · mise à jour : octobre 2026</p>
+
+      <p style="margin-top:1.4rem">Les objets connectés (caméras, routeurs, capteurs) sont pratiques mais souvent mal protégés : mots de passe par défaut, firmwares jamais mis à jour. Une fois infectés, ils servent à lancer des attaques à grande échelle. Je suis ce sujet parce qu'il touche directement le métier d'administrateur réseau : isoler ces appareils, les inventorier, les mettre à jour. En Europe, le Cyber Resilience Act commence à obliger les fabricants à signaler les failles.</p>
+
+      <div class="sub">Actualités suivies</div>
+      <div class="entry">
+        <div class="meta">Octobre 2026</div>
+        <h3>Tengu, une variante modernisée de Mirai</h3>
+        <p>Nozomi Networks décrit un botnet dérivé de Mirai qui vise des équipements IoT exposés sur Internet et cherche à rester le plus longtemps possible sur les appareils infectés. <a href="https://securityonline.info/tag/nozomi-networks/" target="_blank" rel="noopener">Source</a></p>
+      </div>
+      <div class="entry">
+        <div class="meta">Septembre 2026</div>
+        <h3>Cyber Resilience Act : premières obligations</h3>
+        <p>Depuis le 11 septembre 2026, les fabricants de produits connectés doivent signaler les vulnérabilités activement exploitées et les incidents graves : alerte sous 24 h, rapport sous 72 h. Le reste des exigences s'applique fin 2027. <a href="https://www.globalsources.com/knowledge/eu-cyber-resilience-act-connected-device-compliance-hkshows/" target="_blank" rel="noopener">Source</a></p>
+      </div>
+      <div class="entry">
+        <div class="meta">Juillet 2026</div>
+        <h3>Botnet Dysphoria : environ 200 000 appareils</h3>
+        <p>Il profite d'identifiants Telnet et SSH faibles et de failles IoT connues. Les réseaux de santé sont particulièrement exposés quand des équipements embarqués ne sont pas mis à jour. <a href="https://aviatrix.ai/threat-research-center/july-2026-cve-landscape" target="_blank" rel="noopener">Source</a></p>
+      </div>
+      <div class="entry">
+        <div class="meta">Octobre 2025 et suites</div>
+        <h3>Aisuru : une attaque DDoS record contre Azure</h3>
+        <p>Ce botnet, qui détourne des routeurs domestiques et des caméras, a été lié à une attaque de 15,72 Tbps contre Microsoft Azure. Les attaques de ce type ont continué en 2026. <a href="https://itpro.com/security/cyber-attacks/iot-attacks-the-biggest-attacks-so-far-and-what-businesses-can-do" target="_blank" rel="noopener">Source</a></p>
+      </div>
+
+      <div class="sub">Sources de ma veille</div>
+      <p class="note">ANSSI, CERT-FR, CISA, ENISA, Nozomi Networks, Le Monde Informatique, SecurityWeek.</p>
+    </section>
+
+    <!-- TABLEAU E5 -->
+    <section class="panel" id="e5" role="tabpanel" aria-labelledby="t-e5" hidden>
+      <h2>Tableau de synthèse E5</h2>
+      <p class="meta">BTS SIO option SISR · session 2026</p>
+      <div class="table-wrap">
+        <table class="e5">
+          <thead>
+            <tr>
+              <th scope="col">Réalisation</th>
+              <th scope="col">Période</th>
+              <th scope="col" class="c">Gérer le patrimoine</th>
+              <th scope="col" class="c">Répondre aux incidents</th>
+              <th scope="col" class="c">Présence en ligne</th>
+              <th scope="col" class="c">Mode projet</th>
+              <th scope="col" class="c">Mettre à dispo. un service</th>
+              <th scope="col" class="c">Dév. professionnel</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="grp"><td colspan="8">En cours de formation</td></tr>
+            <tr><th scope="row">AP Louvre : filtrage, DMZ, serveur web</th><td class="per">25/02/26 au 11/03/26</td><td class="c">✓</td><td class="c">✓</td><td class="c"></td><td class="c">✓</td><td class="c">✓</td><td class="c"></td></tr>
+            <tr><th scope="row">AP Louvre : service interne (AD, DHCP…)</th><td class="per">18/03/26 au 01/04/26</td><td class="c">✓</td><td class="c">✓</td><td class="c"></td><td class="c">✓</td><td class="c">✓</td><td class="c"></td></tr>
+            <tr><th scope="row">Projet extension d'une architecture</th><td class="per">16/04/26 au 07/05/26</td><td class="c">✓</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c">✓</td><td class="c"></td></tr>
+            <tr><th scope="row">TP Déployer un serveur Debian</th><td class="per">12/02/26</td><td class="c">✓</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c">✓</td><td class="c"></td></tr>
+            <tr class="grp"><td colspan="8">En milieu professionnel, 1re année (CEFFAGE)</td></tr>
+            <tr><th scope="row">Installation de PC portables</th><td class="per">01/06/26 au 05/06/26</td><td class="c">✓</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr>
+            <tr><th scope="row">Installation et configuration de postes clients</th><td class="per">09/06/26 au 10/06/26</td><td class="c"></td><td class="c">✓</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr>
+            <tr><th scope="row">Dépannage d'une imprimante client</th><td class="per">16/06/26 au 17/06/26</td><td class="c"></td><td class="c">✓</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr>
+            <tr><th scope="row">Création de tickets d'incidents sur GLPI</th><td class="per">23/06/26 au 24/06/26</td><td class="c"></td><td class="c">✓</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr>
+            <tr class="grp"><td colspan="8">En milieu professionnel, 2e année</td></tr>
+            <tr><td colspan="8" class="note">À venir.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="panel" id="contact" role="tabpanel" aria-labelledby="t-contact" hidden>
+      <h2>Contact</h2>
+      <p style="margin-bottom:1.6rem">Pour un stage, une alternance ou simplement échanger, écrivez-moi.</p>
+      <ul class="contact-list">
+        <li><span>Email</span><a href="mailto:fombaismael00@gmail.com">fombaismael00@gmail.com</a></li>
+        <li><span>GitHub</span><a href="https://github.com/fombaismael00-bit" target="_blank" rel="noopener">github.com/fombaismael00-bit</a></li>
+        <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/ismael-fomba" target="_blank" rel="noopener">linkedin.com/in/ismael-fomba</a></li>
+      </ul>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  (function () {
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+    var panels = Array.prototype.slice.call(document.querySelectorAll('.panel'));
+    var ids = tabs.map(function (t) { return t.dataset.tab; });
+
+    function show(id, pushHash) {
+      if (ids.indexOf(id) === -1) id = 'accueil';
+      tabs.forEach(function (t) {
+        var on = t.dataset.tab === id;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+      });
+      panels.forEach(function (p) { p.hidden = p.id !== id; });
+      if (pushHash && location.hash !== '#' + id) history.pushState(null, '', '#' + id);
+      window.scrollTo(0, 0);
+    }
+
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { show(t.dataset.tab, true); });
+      t.addEventListener('keydown', function (e) {
+        var n = null;
+        if (e.key === 'ArrowDown' || e.key === 'ArrowRight') n = (i + 1) % tabs.length;
+        if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') n = (i - 1 + tabs.length) % tabs.length;
+        if (n !== null) { e.preventDefault(); tabs[n].focus(); show(tabs[n].dataset.tab, true); }
+      });
+    });
+
+    window.addEventListener('hashchange', function () { show(location.hash.slice(1), false); });
+    show(location.hash.slice(1), false);
+  })();
+</script>
+</body>
+</html>
